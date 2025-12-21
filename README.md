@@ -9,7 +9,7 @@
 <hr/>
 
 <h4 align="center">
-Sou <b>Automation Engineer</b> focado em construir sistemas reais usando <b>n8n (self-hosted)</b>, <b>APIs</b>, <b>Webhooks</b>, <b>Supabase/PostgreSQL</b> e <b>Agentes de IA</b>.
+Sou <b>Especialista em Automação</b> focado em construir sistemas reais usando <b>n8n (self-hosted)</b>, <b>APIs</b>, <b>Webhooks</b>, <b>Supabase/PostgreSQL</b> e <b>Agentes de IA</b>.
 Desenho automações end-to-end do zero — <b>agente orquestrador + subagentes especializados</b> — para substituir operações manuais, reduzir gargalos e padronizar atendimento/processos com velocidade e confiabilidade.
 </h4>
 

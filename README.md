@@ -24,8 +24,8 @@ Desenho automações end-to-end do zero <b>agente orquestrador + subagentes espe
 ## ✅ O que eu construo
 - **Agentes de atendimento 24/7 (WhatsApp)** com orquestração multiagente
 - **RAG do zero** (fontes internas, metadados, políticas e guardrails)
-- **Integrações com CRMs** (busca/criação/atualização de contatos e etapas)
-- **Agendamento automatizado** (Google Calendar: disponibilidade + criação de evento)
+- **Integrações via APIs** (domínios de Leads/Clientes, Catálogo/Estoque, Agenda/Disponibilidade e Operação)
+- **APIs de agendamento e disponibilidade** (checagem de janelas livres, criação/edição/cancelamento de eventos e confirmação do fluxo)
 - **Workflows de operação** (estoque, reservas, cancelamentos, suporte)
 - **Dashboards operacionais** e acompanhamento de métricas (mensageria e operação)
 
@@ -34,36 +34,22 @@ Desenho automações end-to-end do zero <b>agente orquestrador + subagentes espe
 ## 🧩 Sistemas em Destaque (Projetos Reais)
 
 ### ✅ 01 — Automação de WhatsApp + Analytics (Mensageria em Postgres)
-**Objetivo:** centralizar histórico de mensagens e gerar dashboards de acompanhamento.  
+**Objetivo:** centralizar histórico de mensagens e gerar dashboards operacionais de acompanhamento.  
 **Como funciona:** webhooks → fila/buffer → persistência no Postgres → consultas por período → retorno formatado.  
-**Pontos fortes:** concorrência, consistência, prevenção de respostas duplicadas e visão operacional por métricas.
+**Engenharia de conversa:** estrutura de prompt por camadas (contexto + regras + memória curta), lógica de decisão por intenção/estado e roteamento por tarefa; consistência com guardrails e anti-duplicidade para evitar loops e ações repetidas.  
+**Pontos fortes:** concorrência, rastreabilidade do atendimento, consistência de respostas e visão por métricas de mensageria.
 
 ### ✅ 02 — Gestão de Loja (Operação em Supabase)
-**Objetivo:** controlar estoque, disponibilidade e rotinas de operação da loja.  
-**Como funciona:** webhooks + operações transacionais no Supabase → atualização de estoque → integração com reservas/agendamentos.  
-**Pontos fortes:** separação por domínio, rotinas automatizadas e dados confiáveis para decisões.
+**Objetivo:** controlar estoque e rotinas de operação com consistência de dados e visibilidade em tempo real.  
+**Como funciona:** backend em n8n integrado ao Supabase para consulta/criação/edição/atualização de estoque; apresentação do estoque via site (integração backend → frontend) e rotinas conectadas a reservas e operação.  
+**Dashboards:** movimentações (entrada/saída), acompanhamento de estoque e visão de caixa/financeiro para suporte à decisão.  
+**Pontos fortes:** separação por domínio, updates transacionais, dados confiáveis e automação de processos críticos.
 
-### ✅ 03 — Agente de Atendimento (Coco Bronze) + Multiagentes + RAG
-**Contexto:** atendimento humano com gargalos (demora, perda de leads, agendamento manual, perguntas repetidas e inconsistência).  
-**Objetivo:** atendimento 24/7, padronização de respostas, mais agendamentos e redução de retrabalho.
-
-**Arquitetura:**
-- **Orquestrador** + subagentes (agendamento, estoque/serviços, reservas, cancelamentos, suporte)
-- **Fila / buffer de mensagens** e **anti-duplicidade** para lidar com múltiplas interações
-- **RAG construído do zero**, com:
-  - PDFs, políticas, FAQ, mensagens prontas e planilhas de preço
-  - **metadados + tags por tema** para garantir precisão e contexto
-  - respostas restritas às fontes (sem “inventar”)
-
-**Integrações:**
-- **CRM (KOMMO):** busca/cria/atualiza contatos e registra informações do atendimento
-- **Google Calendar:** checa disponibilidade e cria eventos automaticamente
-
-**Confiabilidade & segurança:**
-- **Guardrails no n8n** (anti prompt injection, spam e comportamento anômalo)
-- fallback para atendimento humano quando necessário (quando a base não sustenta a resposta)
-
-> Indicadores recomendados para acompanhar (sem prometer números): tempo de resposta, taxa de agendamento, volume de atendimentos, motivo de contato, taxa de encaminhamento para humano e qualidade percebida.
+### ✅ 03 — Agente de Atendimento + Multiagentes + RAG
+**Contexto:** gargalos no atendimento humano (demora, perda de leads, agendamento manual, perguntas repetidas e inconsistência).  
+**Objetivo:** atendimento 24/7, padronização de respostas, aumento de conversão e redução de retrabalho.  
+**Arquitetura:** orquestrador + subagentes (agendamento, estoque/serviços, reservas, cancelamentos, suporte), com fila/buffer e anti-duplicidade para múltiplas interações.  
+**RAG:** construído do zero com PDFs, políticas, FAQ, mensagens prontas e planilhas de preço; metadados/tags por tema para precisão e respostas restritas às fontes, com fallback para humano quando necessário.
 
 ---
 
@@ -128,11 +114,10 @@ Desenho automações end-to-end do zero <b>agente orquestrador + subagentes espe
 ---
 
 ## 🙋‍♂️ Vamos nos conectar
-<p align="center">
-  <a href="mailto:caiovieira64@gmail.com"><img src="https://img.icons8.com/bubbles/50/000000/gmail.png" alt="Gmail"/></a>
-  <a href="https://linkedin.com/in/caiovie13/"><img src="https://img.icons8.com/bubbles/50/000000/linkedin.png" alt="LinkedIn"/></a>
-  <a href="https://www.instagram.com/iacomcaio/"><img src="https://img.icons8.com/bubbles/50/000000/instagram.png" alt="Instagram"/></a>
-  <a href="https://github.com/caiovie"><img src="https://img.icons8.com/bubbles/50/000000/github.png" alt="GitHub"/></a>
-</p>
+
+[![Email](https://img.shields.io/badge/Email-caiovieira64%40gmail.com-1f2937?style=for-the-badge&logo=gmail&logoColor=white)](mailto:caiovieira64@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-caiovie13-1f2937?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/caiovie13/)
+[![Instagram](https://img.shields.io/badge/Instagram-iacomcaio-1f2937?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/iacomcaio/)
+[![GitHub](https://img.shields.io/badge/GitHub-caiovie-1f2937?style=for-the-badge&logo=github&logoColor=white)](https://github.com/caiovie)
 
 <hr/>

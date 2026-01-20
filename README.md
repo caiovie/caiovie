@@ -22,18 +22,18 @@ Desenho automações end-to-end do zero <b>agente orquestrador + subagentes espe
 ---
 
 ## ✅ O que eu construo
-- **Agentes de atendimento 24/7 (WhatsApp)** com orquestração multiagente
-- **RAG do zero** (fontes internas, metadados, políticas e guardrails)
-- **Integrações via APIs** (domínios de Leads/Clientes, Catálogo/Estoque, Agenda/Disponibilidade e Operação)
-- **APIs de agendamento e disponibilidade** (checagem de janelas livres, criação/edição/cancelamento de eventos e confirmação do fluxo)
-- **Workflows de operação** (estoque, reservas, cancelamentos, suporte)
-- **Dashboards operacionais** e acompanhamento de métricas (mensageria e operação)
+- **Sistemas de atendimento assíncronos (24/7)** com roteamento por intenção e multiagentes
+- **RAG do zero** com chunking, metadados e políticas de resposta (guardrails)
+- **Integrações orientadas a eventos via APIs** (domínios: clientes, estoque, agenda e operação)
+- **Automação de disponibilidade e scheduling** (consulta, criação, alteração e cancelamento de eventos)
+- **Workflows operacionais críticos** (estoque, reservas, cancelamentos, suporte e auditoria)
+- **Dashboards e observabilidade operacional** (mensageria, operação e indicadores de performance)
 
 ---
 
 ## 🧩 Sistemas em Destaque (Projetos Reais)
 
-### ✅ 01 — Automação de WhatsApp + Analytics (Mensageria em Postgres)
+### ✅ 01 — Automação de WhatsApp + Analytics
 **Objetivo:** centralizar histórico de mensagens e gerar dashboards operacionais de acompanhamento.  
 **Como funciona:** webhooks → fila/buffer → persistência no Postgres → consultas por período → retorno formatado.  
 **Engenharia de conversa:** estrutura de prompt por camadas (contexto + regras + memória curta), lógica de decisão por intenção/estado e roteamento por tarefa; consistência com guardrails e anti-duplicidade para evitar loops e ações repetidas.  
@@ -49,7 +49,7 @@ Desenho automações end-to-end do zero <b>agente orquestrador + subagentes espe
 **Contexto:** gargalos no atendimento humano (demora, perda de leads, agendamento manual, perguntas repetidas e inconsistência).  
 **Objetivo:** atendimento 24/7, padronização de respostas, aumento de conversão e redução de retrabalho.  
 **Arquitetura:** orquestrador + subagentes (agendamento, estoque/serviços, reservas, cancelamentos, suporte), com fila/buffer e anti-duplicidade para múltiplas interações.  
-**RAG:** construído do zero com PDFs, políticas, FAQ, mensagens prontas e planilhas de preço; metadados/tags por tema para precisão e respostas restritas às fontes, com fallback para humano quando necessário.
+**RAG:** construído do zero, políticas, FAQ, mensagens prontas e planilhas de preço; metadados/tags por tema para precisão e respostas restritas às fontes, com fallback para humano quando necessário.
 
 ---
 
